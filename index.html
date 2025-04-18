@@ -3,58 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Git Basics</title>
+  <title>Git Push Workflow</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
       padding: 20px;
-      max-width: 800px;
-      margin: auto;
     }
     h1 {
       text-align: center;
-      color: #333;
+      color: #2c3e50;
     }
-    .command {
+    .step {
       background-color: #fff;
-      border-left: 5px solid #4CAF50;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      padding: 20px;
+      border-left: 6px solid #3498db;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .command h2 {
-      margin-top: 0;
-      color: #4CAF50;
+    .step h2 {
+      color: #3498db;
     }
     code {
       background-color: #eee;
-      padding: 2px 4px;
+      padding: 2px 6px;
       border-radius: 4px;
       font-family: monospace;
     }
   </style>
 </head>
 <body>
-  <h1>Git Command Basics</h1>
+  <h1>Git Push Workflow to GitHub</h1>
 
-  <div class="command">
-    <h2>1. <code>git init</code></h2>
-    <p>This command initializes a new Git repository in your current directory. It creates a hidden <code>.git</code> folder which stores all the configuration and version history.</p>
-    <p><strong>Usage:</strong> <code>git init</code></p>
+  <div class="step">
+    <h2>1. Initialize Git</h2>
+    <p>Start version control in your project folder:</p>
+    <code>git init</code>
   </div>
 
-  <div class="command">
-    <h2>2. <code>git add</code></h2>
-    <p>This command adds files to the staging area, meaning you're telling Git to include updates to these files in the next commit.</p>
-    <p><strong>Usage:</strong> <code>git add filename</code> or <code>git add .</code> (to add all changes)</p>
+  <div class="step">
+    <h2>2. Add Files</h2>
+    <p>Stage all your project files:</p>
+    <code>git add .</code>
   </div>
 
-  <div class="command">
-    <h2>3. <code>git commit</code></h2>
-    <p>This command saves your changes to the local repository. It takes everything from the staging area and stores it as a snapshot in your Git history.</p>
-    <p><strong>Usage:</strong> <code>git commit -m "Your commit message"</code></p>
+  <div class="step">
+    <h2>3. Commit Changes</h2>
+    <p>Commit with a meaningful message:</p>
+    <code>git commit -m "Initial commit"</code>
   </div>
 
+  <div class="step">
+    <h2>4. Create Repository on GitHub</h2>
+    <p>Go to <a href="https://github.com" target="_blank">GitHub</a>, create a new repository, and copy the remote URL.</p>
+  </div>
+
+  <div class="step">
+    <h2>5. Add Remote Origin</h2>
+    <p>Link your local repo with GitHub:</p>
+    <code>git remote add origin https://github.com/your-username/your-repo.git</code>
+  </div>
+
+  <div class="step">
+    <h2>6. Push to GitHub</h2>
+    <p>Push your code to the main branch:</p>
+    <code>git push -u origin main</code>
+    <p><em>or</em> if your default branch is <code>master</code>:</p>
+    <code>git push -u origin master</code>
+  </div>
+
+  <div class="step">
+    <h2>🔁 Future Pushes</h2>
+    <p>Once connected, just use:</p>
+    <code>git add .</code><br>
+    <code>git commit -m "Your update"</code><br>
+    <code>git push</code>
+  </div>
 </body>
 </html>
